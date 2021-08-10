@@ -1,6 +1,6 @@
 # Handwriting Reognition in Pytorch
 
-**Project Description**
+**Project Description:**<br>
 For this project, we built a neural network that takes in an image of a handwritten name and outputs the name. At the time of this project, there were no Pytorch notebooks published on the Kaggle site for this project, so we took an existing Keras implementation and translated it into Pytorch, with a few modifications. 
 
 **Data Source:**
