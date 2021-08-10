@@ -1,5 +1,14 @@
 # Handwriting Reognition in Pytorch
 
+**Project Description**
+For this project, we built a neural network that takes in an image of a handwritten name and outputs the name. At the time of this project, there were no Pytorch notebooks published on the Kaggle site for this project, so we took an existing Keras implementation and translated it into Pytorch, with a few modifications. 
+
+**Data Source:**
+ https://www.kaggle.com/landlord/handwriting-recognition
+
+**Keras Notebook that our work is based on:**
+https://www.kaggle.com/samfc10/handwriting-recognition-using-crnn-in-keras
+
 **Data Types (JPG and CSV):**
 - CSVs containing JPEG filename of black and white handwriting samples
 - Train-test split: divided into 331,059 training and 41,382 validation respectively
