@@ -71,7 +71,13 @@ https://www.kaggle.com/samfc10/handwriting-recognition-using-crnn-in-keras
 ## Conclusions and Lessons Learned
 **CTCLoss Function** This was our first time using the CTCloss and in a couple of our trainin losses were "Nan". After some research, we
 determined that CTCLoss is subject to numerical instability if it is not on the CPU. The reason why the "Nans" were sporadic was because
-we reasoned that there were certain combinations within a batch that caused the numerical instability
+we reasoned that there were certain combinations within a batch that caused the numerical instability. <br>
+
 **Keras vs Pytorch Translation**: Since we modeled our notebook from the top-performing notebook in Kaggle, we realized that Keras
 functions vs PyTorch functions had minor inconsistencies. For example, we had to permute the dimensions in order to get the CTC loss
-function to work. Additionally, the CTC Loss function in PyTorch requires y_prediction to be in the form (sequence length, batch_size, # of classes)
+function to work. Additionally, the CTC Loss function in PyTorch requires y_prediction to be in the form (sequence length, batch_size, # of classes).<br>
+
+**Learning Rate**
+We experimented with fixed learning rates (0.001 and 0.0001) as well as a cosine annealing learning rate scheduler. As expected, we saw better results with the learning rate scheduler. <br>
+
+**Batch Size of 32 vs 64**
