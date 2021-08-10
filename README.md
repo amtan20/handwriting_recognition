@@ -5,7 +5,6 @@ For this project, we built a neural network that takes in an image of a handwrit
 
 ![img1](https://github.com/amtan20/handwriting_recognition/blob/main/sample_images/VALIDATION_10919.jpg)
 ![img2](https://github.com/amtan20/handwriting_recognition/blob/main/sample_images/VALIDATION_2808.jpg)
-![img3](https://github.com/amtan20/handwriting_recognition/blob/main/sample_images/VALIDATION_35233.jpg)
 
 **Data Source:**
  https://www.kaggle.com/landlord/handwriting-recognition
