@@ -3,6 +3,10 @@
 **Project Description:**<br>
 For this project, we built a neural network that takes in an image of a handwritten name and outputs the name. At the time of this project, there were no Pytorch notebooks published on the Kaggle site for this project, so we took an existing Keras implementation and translated it into Pytorch, with a few modifications. 
 
+![img1](https://github.com/amtan20/FacebookNetworkAnalysis/blob/main/GN_Community_Detection.png)
+![img2](https://github.com/amtan20/FacebookNetworkAnalysis/blob/main/GN_Community_Detection.png)
+![img3](https://github.com/amtan20/FacebookNetworkAnalysis/blob/main/GN_Community_Detection.png)
+
 **Data Source:**
  https://www.kaggle.com/landlord/handwriting-recognition
 
@@ -61,7 +65,7 @@ https://www.kaggle.com/samfc10/handwriting-recognition-using-crnn-in-keras
 ## Results (20 epochs; Mish Activation; batch_size=32; )
 
 
-## Results (20 epochs; Mish Activation; batch_size=32; )
+## Results (20 epochs; Mish Activation; batch_size=64; )
 
 
 ## Conclusions and Lessons Learned
