@@ -1,11 +1,11 @@
 # Handwriting Reognition in Pytorch
 
 **Project Description:**<br>
-For this project, we built a neural network that takes in an image of a handwritten name and outputs the name. 
+For this project, we built a neural network that takes in an image of a handwritten name and outputs the name.
 ![img1](https://github.com/amtan20/handwriting_recognition/blob/main/sample_images/VALIDATION_10919.jpg)
 ![img2](https://github.com/amtan20/handwriting_recognition/blob/main/sample_images/VALIDATION_2808.jpg)
 
-At the time of this project, there were no Pytorch notebooks published on the Kaggle site for this project, so we took an existing high performing Keras implementation and translated it into Pytorch, with a few modifications. 
+At the time of this project, there were no Pytorch notebooks published on the Kaggle site for this project, so we took an existing high performing Keras implementation and translated it into Pytorch, with a few modifications.
 
 **Data Source:**
  https://www.kaggle.com/landlord/handwriting-recognition
@@ -62,10 +62,12 @@ https://www.kaggle.com/samfc10/handwriting-recognition-using-crnn-in-keras
 - Calculate character accuracy (compare characters the label was not -1 padded
 - word accuracy (only correct if all characters within a word were correct)
 
-## Results (20 epochs; Mish Activation; batch_size=32; )
+## Results (20 epochs; Mish Activation; batch_size=32;
+- We believe that our metric for "# of correct words" was calculated inaccurately because even as our character accuracy increased, our word accuracy stayed flat
+- Our character accuracy reached 20% by epoch 15
+- Our CTC losses started giving us Nans after epoch 15 and the "% correct characters" metric nosedived
 
-
-## Results (20 epochs; Mish Activation; batch_size=64; )
+## Results (20 epochs; Mish Activation; batch_size=64;
 
 
 ## Conclusions and Lessons Learned
@@ -74,12 +76,17 @@ This was our first time using the CTCloss and in a couple of our trainin losses 
 determined that CTCLoss is subject to numerical instability if it is not on the CPU. The reason why the "Nans" were sporadic was because
 we reasoned that there were certain combinations within a batch that caused the numerical instability. <br>
 
-**Keras vs Pytorch Translation**:<br> 
+**Keras vs Pytorch Translation**:<br>
 Since we modeled our notebook from the top-performing notebook in Kaggle, we realized that Keras
 functions vs PyTorch functions had minor inconsistencies. For example, we had to permute the dimensions in order to get the CTC loss
 function to work. Additionally, the CTC Loss function in PyTorch requires y_prediction to be in the form (sequence length, batch_size, # of classes).<br>
 
 **Learning Rate:**<br>
 We experimented with fixed learning rates (0.001 and 0.0001) as well as a cosine annealing learning rate scheduler. As expected, we saw better results with the learning rate scheduler. <br>
+
+
+**Activation Function:**<br>
+We noticed that when our model architecture used the MiSH activation function, our training times were noticeably slower; This is because the derivatives when x <0 is harder to calculate (as opposed to ReLu which zeros out the gradient when x<0 making it faster to calculate)
+
 
 **Batch Size of 32 vs 64**<br>
